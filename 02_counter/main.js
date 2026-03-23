@@ -27,3 +27,5 @@ function minus(){
 //     count++;
 //     num.innerHTML = count;
 // };
+
+num.innerHTML = count;
