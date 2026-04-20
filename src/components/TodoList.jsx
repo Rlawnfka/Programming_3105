@@ -1,6 +1,6 @@
 import TodoItemEmpty from "./TodoItemEmpty";
 import TodoItem from "./TodoItem";
-export default function TodoList({ todos, toggleTodo }){
+export default function TodoList({ todos, ...rest }){ //rest : toggleTodo, deleteTodo
     return(
         <ul className='todo__list'>
             {/* todos에 todo 없으면, <TodoItemEmpty /> */}
@@ -8,7 +8,7 @@ export default function TodoList({ todos, toggleTodo }){
             {/* todos에 todo 있으면, <TodoItem /> */}
             {todos.length > 0 && 
                 todos.map(
-                    (todo) => <TodoItem key={todo.id} todo={todo} toggleTodo={toggleTodo}/>
+                    (todo) => <TodoItem key={todo.id} todo={todo} {...rest}/>
             )}
         </ul>
     )
